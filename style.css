@@ -1,9 +1,72 @@
 :root {
-    background-color: #0d1117;
+    /* custom color declarations */
+    --dark-background: #0d1117;
+    --navy-blue: #0e1724;
+    --indigo: #2f3045;
+    --bright-aqua: #00ffffad;
+    --dim-aqua: #00ffff75;
+    --dim-gold: #dbce7899;
+    --heading-blue: #1b2e49f8;
+    --light-text: #c9d1d9;
+    /* html background color */
+    background-color: var(--dark-background);
 }
 
+/* global rules  */
 * {
     margin: 0;
     padding: 0;
+    font-family: monospace;
+    color: var(--light-text);
 }
 
+/* external heading font  */
+@font-face {
+    font-family: caslon;
+    src: url('fonts/ACaslonPro-Bold.otf');
+}
+
+main {
+    min-height: 100vh;
+    display: grid;
+    grid-template-columns: 1fr 4fr;
+    grid-template-rows: 1fr 5fr;
+}
+
+main header {
+    /* grid-area: header; */
+    grid-column: 2/-1;
+}
+
+.content {
+    /* grid-area: content; */
+    background-color: var(--navy-blue);
+    grid-column: 2/-1;
+    grid-row: 2/3;
+}
+
+/* ------------SIDEBAR----------------*/
+.sidebar {
+    /* grid-area: sidebar; */
+    /* background-image: url(images/greendale-poster.webp);
+    background-size: contain;
+    background-repeat: no-repeat; */
+    /* background-position: bottom; */
+    background-color: var(--indigo);
+    grid-row: 1/-1;
+    padding: 10%;
+}
+
+.sidebar .links {
+    list-style-type: none;
+    min-height: 50%;
+    display: grid;
+    align-content: space-evenly;
+}
+
+.sidebar nav{
+    background-color: var(--navy-blue);
+    border: thin solid var(--dim-aqua);
+    border-radius: 4px;
+    padding: 5%;
+}
