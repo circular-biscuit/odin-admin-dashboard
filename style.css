@@ -162,7 +162,13 @@ main header {
     grid-template-columns: 3fr 1fr;
     gap: 2ch;
 }
-
+    /* heading styling for all cards */
+    .card h4 {
+            background-color: var(--dim-gold);
+            color: var(--navy-blue);
+            padding: 1ch;
+            height: fit-content;
+    }
     /* grid 1 */
     .grid1 {
         display: grid;
@@ -174,25 +180,21 @@ main header {
             border-left: thick solid var(--bright-aqua);
             border-top: thick solid var(--bright-aqua);
             box-shadow: 1px 1px 2px var(--dim-aqua);
-            display: grid;
+            display: flex;
+            flex-direction: column;
         }
 
-            .grid1 .card strong {
-                color: var(--bright-aqua);
+            .grid1 .card p {
+                background-color: var(--dark-background);
+                padding: 1ch;
+                flex: 1;
             }
 
-        .card h4 {
-            background-color: var(--dim-gold);
-            color: var(--navy-blue);
-            padding: 1ch;
-            height: fit-content;
-        }
+                .grid1 .card strong {
+                    color: var(--bright-aqua);
+                }
 
-        .grid1 .card p {
-            background-color: var(--dark-background);
-            padding: 1ch;
-            /* align-self: stretch; */
-        }
+        
     
     /* grid 2 */
     .grid2 {
@@ -207,10 +209,13 @@ main header {
             .dean-shot {
                 height: 20vh;
                 padding: 2ch 0;
+                display: flex;
+                justify-content: center;
             }
 
                 .dean-shot img {
                     height: 100%;
+                    
                 }
 
             .grid2 .card ul {
