@@ -56,6 +56,10 @@ button {
         transform: scale(var(--click-scaling));
     }
 
+ul {
+    list-style-type: none;
+}
+
 /*------------MAIN---------------*/
 
 main {
@@ -150,6 +154,17 @@ main header {
         .grid1 .card {
             border: 1px solid var(--bright-aqua);
             box-shadow: 1px 1px 2px var(--dim-aqua);
+            
+        }
+
+        .grid1 .card h4 {
+            background-color: var(--dim-gold);
+            padding: 1ch;
+        }
+
+        .grid1 .card p {
+            background-color: var(--indigo);
+            padding: 1ch;
         }
     
     /* grid 2 */
@@ -165,7 +180,9 @@ main header {
 
     .card {
         padding: 2ch;
+        overflow: auto;
     }
+
 
     h4 {
         padding-bottom: 2ch;
@@ -196,7 +213,6 @@ main header {
         }
 
         .sidebar .links {
-            list-style-type: none;
             display: grid;
             gap: 2px;
             /* min-height: 80%; */
