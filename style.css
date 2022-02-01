@@ -135,8 +135,41 @@ main header {
     grid-row: 2/3;
     padding: 2%;
     border: medium solid var(--indigo);
+    display: grid;
+    grid-template-columns: 3fr 1fr;
+    gap: 2ch;
 }
 
+    /* grid 1 */
+    .grid1 {
+        display: grid;
+        grid-template: 1fr 1fr/ 1fr 1fr 1fr;
+        gap: 2ch;
+    }
+
+        .grid1 .card {
+            border: 1px solid var(--bright-aqua);
+            box-shadow: 1px 1px 2px var(--dim-aqua);
+        }
+    
+    /* grid 2 */
+    .grid2 {
+        display: grid;
+        grid-template-rows: 1fr 1fr;
+        gap: 2ch;
+    }
+        .grid2 .card {
+            border: 1px solid var(--dim-gold);
+            box-shadow: 1px 1px 2px var(--dim-gold);
+        }
+
+    .card {
+        padding: 2ch;
+    }
+
+    h4 {
+        padding-bottom: 2ch;
+    }
 /* ------------SIDEBAR----------------*/
 .sidebar {
     background-image: url(images/greendale-poster.webp);
