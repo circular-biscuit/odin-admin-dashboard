@@ -49,7 +49,6 @@ button {
     button:hover {
         background-color: var(--indigo);
         color: var(--light-text);
-        border: thin solid var(--bright-aqua);
     }
 
     button:active {
@@ -67,7 +66,7 @@ h1, h2, h3, h4, h5, h6 {
 /*------------MAIN---------------*/
 
 main {
-    min-height: 100vh;
+    height: 100vh;
     display: grid;
     grid-template-columns: 1fr 4fr;
     grid-template-rows: 1fr 5fr;
@@ -135,20 +134,11 @@ main header {
                     height: 100%;
                 }
     
-        
-
     /* row 2 */
     main header .row2 {
         display: flex;
         justify-content: space-between;
     }
-
-        /* .header-btns {
-            display: flex;
-            justify-content: space-between;
-        } */
-
-
 
 /*------------CONTENT----------------*/
 
@@ -247,13 +237,16 @@ main header {
     grid-row: 1/-1;
     padding: 5%;
     border: medium solid var(--dim-aqua);
+    display: flex;
+    flex-direction: column;
 }
 
     .sidebar nav{
         background-color: var(--translucent-navy);
         border: thin solid var(--dim-aqua);
         padding: 5%;
-        height: 50%;
+        flex: 1;
+        /* height: 50%; */
         overflow: auto;
     }
 
@@ -261,14 +254,12 @@ main header {
             border-left: thin solid var(--dim-aqua);
             border-bottom: thin solid var(--dim-aqua);
             padding: 2%;
+            margin-bottom: 4ch;
         }
 
         .sidebar ul {
-            /* display: grid;
-            gap: 2px; */
-            display: flex;
-            flex-direction: column;
-            height: 80%;
+            display: grid;
+            gap: 2ch;
         }
 
             .sidebar .links li {
