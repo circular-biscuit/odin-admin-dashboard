@@ -9,6 +9,8 @@
     --dim-gold: #dbce7899;
     --heading-blue: #1b2e49f8;
     --light-text: #c9d1d9;
+    /* link click scaling amount  */
+    --click-scaling: 1.02;
     /* html background color */
     background-color: var(--dark-background);
     
@@ -36,6 +38,24 @@
     text-decoration: none;
 }
 
+button {
+    background-color: var(--bright-aqua);
+    color: var(--navy-blue);
+    border: none;
+    padding: 4px;
+    box-shadow: 1px 1px 2px var(--dim-aqua);
+}
+
+    button:hover {
+        background-color: var(--indigo);
+        color: var(--light-text);
+        border: thin solid var(--bright-aqua);
+    }
+
+    button:active {
+        transform: scale(var(--click-scaling));
+    }
+
 /*------------MAIN---------------*/
 
 main {
@@ -53,21 +73,59 @@ main header {
     border: medium solid var(--dim-gold);
     padding: 2%;
     display: grid;
-    grid-row: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    gap: 4ch;
+    align-items: center;
 }
-
-    header input {
-        background-color: var(--bright-aqua);
-        color: var(--navy-blue);
-        border: none;
+    /* row 1 */
+    main header .row1 {
+        display: flex;
+        justify-content: space-between;
+        align-content: center;
     }
 
-    input:hover, input:focus {
-        outline: none;
-        border: 1px solid var(--bright-aqua);
-        background-color: var(--indigo);
-        color: #c9d1d9;
+        /* box 1*/
+            header input {
+                background-color: var(--bright-aqua);
+                color: var(--navy-blue);
+                border: none;
+            }
+
+            input:hover, input:focus {
+                outline: none;
+                border: 1px solid var(--bright-aqua);
+                background-color: var(--indigo);
+                color: var(--light-text);
+            }
+
+        /* box 2 */
+        main header .row1 .box2 {
+            display: flex;
+            align-content: center;
+        }
+            main header .row1 .img-box {
+                height: 35px;
+                width: 35px;
+                background-image: url('images/greendale-logo.webp');
+                background-size: contain;
+            }
+
+            .logo{
+                height: 100%;
+                width: 100%;
+            }
+
+    /* row 2 */
+    main header .row2 {
+        display: flex;
+        justify-content: space-between;
     }
+
+        /* .header-btns {
+            display: flex;
+            justify-content: space-between;
+        } */
+
 
 /*------------CONTENT----------------*/
 
@@ -108,8 +166,8 @@ main header {
             list-style-type: none;
             display: grid;
             gap: 2px;
-            min-height: 80%;
-            align-content: space-evenly;
+            /* min-height: 80%; */
+            align-content: stretch;
         }
 
         .sidebar .links li {
@@ -122,5 +180,9 @@ main header {
         .sidebar .links li:hover {
             border: 1px solid var(--bright-aqua);
             background-color: var(--indigo);
+        }
+
+        .sidebar .links li:active{
+            transform: scale(var(--click-scaling));
         }
     
