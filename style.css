@@ -87,16 +87,23 @@ main header {
 }
     /* row 1 */
     main header .row1 {
-        display: flex;
-        justify-content: space-between;
-        align-content: center;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 4ch;
     }
 
         /* box 1*/
+        .box1 {
+            display: flex;
+            align-items: center;
+            
+        }
             header input {
                 background-color: var(--bright-aqua);
                 color: var(--navy-blue);
                 border: none;
+                margin-left: 2ch;
+                flex:1;
             }
 
             input:hover, input:focus {
@@ -107,25 +114,28 @@ main header {
             }
 
         /* box 2 */
-        main header .row1 .box2 {
-            display: flex;
-            align-content: center;
+        .box2 {
+            justify-self: end;
+            display: grid;
+            place-items: center;
         }
-            main header .row1 .img-box {
-                height: 10vh;
-                padding-left: 2ch;
-                /* background-image: url('images/greendale-logo.webp');
-                background-size: contain; */
+
+            header .row1 .box2 {
+                display: flex;
+                align-content: center;
             }
+                header .row1 .img-box {
+                    height: 10vh;
+                    padding-left: 2ch;
+                    /* background-image: url('images/greendale-logo.webp');
+                    background-size: contain; */
+                }
 
                 .logo{
                     height: 100%;
                 }
+    
         
-        .box1, .box2 {
-            display: grid;
-            place-items: center;
-        }
 
     /* row 2 */
     main header .row2 {
@@ -171,7 +181,7 @@ main header {
                 color: var(--bright-aqua);
             }
 
-        .grid1 .card h4 {
+        .card h4 {
             background-color: var(--dim-gold);
             color: var(--navy-blue);
             padding: 1ch;
@@ -196,12 +206,25 @@ main header {
         }
             .dean-shot {
                 height: 20vh;
-                padding-bottom: 2ch;
+                padding: 2ch 0;
             }
 
-            .dean-shot img {
-                height: 100%;
+                .dean-shot img {
+                    height: 100%;
+                }
+
+            .grid2 .card ul {
+                display: flex;
+                flex-direction: column;
+                justify-content: space-around;
+                height: 80%;
             }
+
+                .grid2 .card ul li{
+                    border-left: thin solid var(--dim-gold);
+                    border-bottom: thin solid var(--dim-gold);
+                    padding: 1ch;
+                }
     .card {
         padding: 2ch;
         overflow: auto;
@@ -235,26 +258,28 @@ main header {
             padding: 2%;
         }
 
-        .sidebar .links {
-            display: grid;
-            gap: 2px;
-            /* min-height: 80%; */
-            align-content: stretch;
+        .sidebar ul {
+            /* display: grid;
+            gap: 2px; */
+            display: flex;
+            flex-direction: column;
+            height: 80%;
         }
 
-        .sidebar .links li {
-            border-left: thin solid var(--dim-gold);
-            border-bottom: thin solid var(--dim-gold);
-            padding: 2%;
-            box-shadow: 0px 2px 2px var(--indigo);
-        }
+            .sidebar .links li {
+                border-left: thin solid var(--dim-gold);
+                border-bottom: thin solid var(--dim-gold);
+                padding: 2%;
+                box-shadow: 0px 2px 2px var(--indigo);
+            }
 
-        .sidebar .links li:hover {
-            border: 1px solid var(--bright-aqua);
-            background-color: var(--indigo);
-        }
+            .sidebar .links li:hover {
+                border-left: 1px solid var(--bright-aqua);
+                border-bottom: 1px solid var(--bright-aqua);
+                background-color: var(--indigo);
+            }
 
-        .sidebar .links li:active{
-            transform: scale(var(--click-scaling));
-        }
+            .sidebar .links li:active{
+                transform: scale(var(--click-scaling));
+            }
     
