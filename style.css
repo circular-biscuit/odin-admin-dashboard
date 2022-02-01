@@ -2,6 +2,7 @@
     /* custom color declarations */
     --dark-background: #0d1117;
     --navy-blue: #0e1724;
+    --translucent-navy: #0e1724df;
     --indigo: #2f3045;
     --bright-aqua: #00ffffad;
     --dim-aqua: #00ffff75;
@@ -10,63 +11,116 @@
     --light-text: #c9d1d9;
     /* html background color */
     background-color: var(--dark-background);
+    
+}
+/* external heading font  */
+@font-face {
+    font-family: caslon-heading;
+    src: url('fonts/ACaslonPro-Bold.otf');
+}
+
+/* external regular font */
+@font-face {
+    font-family: caslon-regular;
+    src: url('fonts/ACaslonPro-Regular.otf');
 }
 
 /* global rules  */
 * {
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
     font-family: monospace;
     color: var(--light-text);
+    border-radius: 4px;
+    text-decoration: none;
 }
 
-/* external heading font  */
-@font-face {
-    font-family: caslon;
-    src: url('fonts/ACaslonPro-Bold.otf');
-}
+/*------------MAIN---------------*/
 
 main {
     min-height: 100vh;
     display: grid;
     grid-template-columns: 1fr 4fr;
     grid-template-rows: 1fr 5fr;
+    gap: 2ch;
 }
+
+/*------------HEADER-------------*/
 
 main header {
-    /* grid-area: header; */
     grid-column: 2/-1;
+    border: medium solid var(--dim-gold);
+    padding: 2%;
+    display: grid;
+    grid-row: 1fr 1fr;
 }
 
+    header input {
+        background-color: var(--bright-aqua);
+        color: var(--navy-blue);
+        border: none;
+    }
+
+    input:hover, input:focus {
+        outline: none;
+        border: 1px solid var(--bright-aqua);
+        background-color: var(--indigo);
+        color: #c9d1d9;
+    }
+
+/*------------CONTENT----------------*/
+
 .content {
-    /* grid-area: content; */
     background-color: var(--navy-blue);
     grid-column: 2/-1;
     grid-row: 2/3;
+    padding: 2%;
+    border: medium solid var(--indigo);
 }
 
 /* ------------SIDEBAR----------------*/
 .sidebar {
-    /* grid-area: sidebar; */
-    /* background-image: url(images/greendale-poster.webp);
+    background-image: url(images/greendale-poster.webp);
     background-size: contain;
-    background-repeat: no-repeat; */
-    /* background-position: bottom; */
     background-color: var(--indigo);
     grid-row: 1/-1;
-    padding: 10%;
-}
-
-.sidebar .links {
-    list-style-type: none;
-    min-height: 50%;
-    display: grid;
-    align-content: space-evenly;
-}
-
-.sidebar nav{
-    background-color: var(--navy-blue);
-    border: thin solid var(--dim-aqua);
-    border-radius: 4px;
     padding: 5%;
+    border: medium solid var(--dim-aqua);
 }
+
+    .sidebar nav{
+        background-color: var(--translucent-navy);
+        border: thin solid var(--dim-aqua);
+        padding: 5%;
+        height: 50%;
+        overflow: auto;
+    }
+
+        .sidebar h3 {
+            font-family: caslon-heading;
+            border-left: thin solid var(--dim-aqua);
+            border-bottom: thin solid var(--dim-aqua);
+            padding: 2%;
+        }
+
+        .sidebar .links {
+            list-style-type: none;
+            display: grid;
+            gap: 2px;
+            min-height: 80%;
+            align-content: space-evenly;
+        }
+
+        .sidebar .links li {
+            border-left: thin solid var(--dim-gold);
+            border-bottom: thin solid var(--dim-gold);
+            padding: 2%;
+            box-shadow: 0px 2px 2px var(--indigo);
+        }
+
+        .sidebar .links li:hover {
+            border: 1px solid var(--bright-aqua);
+            background-color: var(--indigo);
+        }
+    
