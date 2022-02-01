@@ -82,7 +82,7 @@ main header {
     padding: 2%;
     display: grid;
     grid-template-rows: 1fr 1fr;
-    gap: 4ch;
+    gap: 2ch;
     align-items: center;
 }
     /* row 1 */
@@ -112,16 +112,20 @@ main header {
             align-content: center;
         }
             main header .row1 .img-box {
-                height: 35px;
-                width: 35px;
-                background-image: url('images/greendale-logo.webp');
-                background-size: contain;
+                height: 10vh;
+                padding-left: 2ch;
+                /* background-image: url('images/greendale-logo.webp');
+                background-size: contain; */
             }
 
-            .logo{
-                height: 100%;
-                width: 100%;
-            }
+                .logo{
+                    height: 100%;
+                }
+        
+        .box1, .box2 {
+            display: grid;
+            place-items: center;
+        }
 
     /* row 2 */
     main header .row2 {
@@ -187,11 +191,17 @@ main header {
         gap: 2ch;
     }
         .grid2 .card {
-            /* border: 1px solid var(--dim-gold); */
             background-color: var(--dark-background);
             box-shadow: 1px 1px 2px var(--dim-gold);
         }
+            .dean-shot {
+                height: 20vh;
+                padding-bottom: 2ch;
+            }
 
+            .dean-shot img {
+                height: 100%;
+            }
     .card {
         padding: 2ch;
         overflow: auto;
