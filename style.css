@@ -220,15 +220,21 @@ main header {
                     border-bottom: thin solid var(--dim-gold);
                     padding: 1ch;
                 }
+                
+                .grid2 .card b {
+                color: var(--bright-aqua);
+                }
+    
     .card {
         padding: 2ch;
         overflow: auto;
     }
 
-
     h4 {
         padding-bottom: 2ch;
     }
+
+            
 /* ------------SIDEBAR----------------*/
 .sidebar {
     background-image: url(images/greendale-poster.webp);
